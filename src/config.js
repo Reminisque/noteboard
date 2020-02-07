@@ -1,5 +1,5 @@
 var config = {
-  'firebase': {
+  firebase: {
     apiKey: "__API_KEY__",
     authDomain: "__AUTH_DOMAIN__",
     databaseURL: "__DATABASE_URL__",
