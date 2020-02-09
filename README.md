@@ -6,7 +6,22 @@ Noteboard is a note-taking application built around the React front-end framewor
 
 * Make sure that `npm` is installed
 * Open terminal, navigate to the project directory and run `npm install` to install dependencies
-* Replace template in `config.js` (found in `src` folder) with your Firebase project configuation
+* Create `config.js` file with following code inside `src` folder and replace template with your Firebase project configuation
+```
+var config = {
+  firebase: {
+    apiKey: "__API_KEY__",
+    authDomain: "__AUTH_DOMAIN__",
+    databaseURL: "__DATABASE_URL__",
+    projectId: "__PROJECT_ID__",
+    storageBucket: "__STORAGE_BUCKET__",
+    messagingSenderId: "__MESSAGING_SENDER_ID__",
+    appId: "__FIREBASE_APP_ID__"
+  }
+}
+
+export default config;
+```
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
