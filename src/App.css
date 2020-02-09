@@ -1,0 +1,35 @@
+html, body {
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+#noteboard-container {
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.app-container {
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.quill {
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    float: left;
+}
+
+.ql-container {
+    height: calc(100% - 42px);
+    box-sizing: border-box;
+    overflow-y: scroll;
+}
+
+.ql-editor {
+    cursor: text;
+}
