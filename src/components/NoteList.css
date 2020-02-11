@@ -1,1 +1,17 @@
-  
+.new-note-btn {
+    height: 42px;
+    width: 100%;
+    text-transform: uppercase;
+}
+
+.new-note-input {
+    height: 42px;
+    width: 100%;
+    padding: 0 8px;
+}
+
+.new-note-submit-btn {
+    height: 42px;
+    width: 100%;
+    text-transform: uppercase;
+}

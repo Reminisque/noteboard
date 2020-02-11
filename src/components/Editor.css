@@ -2,3 +2,9 @@
     height: 100%;
     box-sizing: border-box;
 }
+
+.note-title-input {
+    height: 42px;
+    width: 100%;
+    padding: 0px 8px;
+}
