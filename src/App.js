@@ -17,10 +17,14 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
-        Hello World
-        <NoteList></NoteList>
-        <Editor></Editor>
+      <div className="app-container">
+        <NoteList
+          selectedNoteIndex={this.state.selectedNoteIndex}
+          notes={this.state.notes}>
+        </NoteList>
+        <Editor
+          selectedNote={this.state.selectedNote}>
+        </Editor>
       </div>
     );
   }
