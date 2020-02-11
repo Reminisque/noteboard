@@ -20,6 +20,7 @@ class Editor extends React.Component {
           type="text"
           className="note-title-input"
           placeholder="Untitled"
+          value={this.state.title}
           onChange={(e) => this.updateTitle(e.target.value)}>
         </input>
         <ReactQuill
