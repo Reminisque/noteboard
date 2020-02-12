@@ -7,7 +7,11 @@ html, body {
     overflow: hidden;
 }
 
-#noteboard-container {
+input {
+    padding: 0 8px;
+}
+
+#noteboardContainer {
     height: 100%;
     box-sizing: border-box;
 }
