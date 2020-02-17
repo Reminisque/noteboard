@@ -1,14 +1,24 @@
 .editor-container {
+  position: absolute;
   height: 100%;
   width: calc(100% - 300px);
   box-sizing: border-box;
-  position: absolute;
   left: 300px;
 }
 
-.note-title-input {
-  height: 42px;
+.note-title-container {
+  display: flex;
   width: 100%;
+  align-items: center;
+  padding-left: 8px;
+  border: solid 2px;
+  box-sizing: border-box;
+}
+
+.note-title-input {
+  height: 50px;
+  width: 100%;
+  border: none;
   box-sizing: border-box;
   font-size: calc(12px + 1vmin);
 }
