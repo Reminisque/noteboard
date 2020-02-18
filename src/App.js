@@ -40,8 +40,7 @@ class App extends React.Component {
           return data;
         });
 
-        console.log(notes);
-        this.setState({ notes: notes });
+        setTimeout(() => {this.setState({ notes: notes })}, 1250);
       });
   }
 }
