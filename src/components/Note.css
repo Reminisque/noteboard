@@ -1,0 +1,63 @@
+.note-container {
+  position: relative;
+  box-sizing: border-box;
+}
+
+.note {
+  display: flex;
+  padding: 8px;
+  padding-right: 40px;
+  box-sizing: border-box;
+  align-content: center;
+  justify-content: flex-start;
+}
+
+.note-text {
+  flex: 1 1 auto;
+  text-align: left;
+  max-width: 100%;
+}
+
+.note-title-text {
+  font-size: calc(10px + 0.75vmin);
+  margin: 2px 0px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 90%;
+}
+
+.note-body-text {
+  font-size: calc(7px + 0.5vmin);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.note-delete-container {
+  top: 50%;
+  right: 8px;
+  position: absolute;
+  transform: translateY(-50%);
+  margin-right: -6px;
+}
+
+.note-delete-btn {
+  display: inline-flex;
+  color: rgba(0, 0, 0, 0.54);
+  padding: 6px;
+  text-align: center; 
+  font-size: 1.5rem;
+  overflow: visible;
+  border-radius: 50%;
+  background: transparent;
+  border: none;
+}
+
+.note-delete-btn:hover {
+  background: rgba(0, 0, 0, 0.50)
+}
+
+.note-delete-icon {
+  fill: currentColor;
+}
