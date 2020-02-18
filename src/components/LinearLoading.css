@@ -1,0 +1,28 @@
+.linear-loading {
+  height: 4px;
+  position: relative;
+  overflow: hidden;
+  background-color: rgba(84, 135, 182, 0.671)
+}
+
+.linear-loading-bar {
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: auto;
+  position: absolute;
+  background-color: rgba(61, 102, 236, 0.788);
+  animation: linear-loading-keyframes 1.8s 
+    cubic-bezier(.19,.77,.85,.3) infinite;
+}
+
+@keyframes linear-loading-keyframes {
+  from {
+    width: 75%;
+    left: -110%
+  }
+  to {
+    width: 5%;
+    left: 110%;
+  }
+}
