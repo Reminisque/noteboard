@@ -1,6 +1,7 @@
 import React from 'react';
 import List from './List';
 import Note from './Note';
+import Divider from './Divider';
 import LinearLoading from './LinearLoading';
 import './NoteList.css';
 
@@ -43,10 +44,14 @@ class NoteList extends React.Component {
             {
               notes.map((_note, _index) => {
                 return (
-                  <Note key={_index}
-                    title={_note.title}
-                    body={_note.body}>
-                  </Note>
+                  <div key={_index}>
+                    <Note
+                      _note={_note}
+                      _index={_index}
+                      selectNote={this.selectNote}>
+                    </Note>
+                    <Divider></Divider>
+                  </div>
                 );
               })
             }
@@ -78,6 +83,8 @@ class NoteList extends React.Component {
   submitNote = () => {
     console.log("Submitted note: ", this.state.title);
   }
+
+  selectNote = (n, i) => this.props.selectNote(n, i);
 }
 
 export default NoteList;

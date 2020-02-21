@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactQuill from 'react-quill';
 import debounce from '../helpers';
-import {ReactComponent as EditIcon} from '../icons/edit.svg';
+import { ReactComponent as EditIcon } from '../icons/edit.svg';
 import './Editor.css';
 
 class Editor extends React.Component {
@@ -33,6 +33,24 @@ class Editor extends React.Component {
         </ReactQuill>
       </div>
     );
+  }
+
+  componentDidMount() {
+    this.setState({ 
+      id: this.props.selectedNote.id,
+      title: this.props.selectedNote.title,
+      body: this.props.selectedNote.body
+    });
+  }
+
+  componentDidUpdate() {
+    if (this.state.id != this.props.selectedNote.id) {
+      this.setState({ 
+        id: this.props.selectedNote.id,
+        title: this.props.selectedNote.title,
+        body: this.props.selectedNote.body
+      });
+    }
   }
 
   updateTitle = async (val) => {

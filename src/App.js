@@ -20,11 +20,15 @@ class App extends React.Component {
       <div className="app-container">
         <NoteList
           selectedNoteIndex={this.state.selectedNoteIndex}
-          notes={this.state.notes}>
+          notes={this.state.notes}
+          selectNote={this.selectNote}>
         </NoteList>
-        <Editor
-          selectedNote={this.state.selectedNote}>
-        </Editor>
+        {
+          this.state.selectedNote ?
+          <Editor
+            selectedNote={this.state.selectedNote}>
+          </Editor> : null
+        }
       </div>
     );
   }
@@ -42,6 +46,10 @@ class App extends React.Component {
 
         setTimeout(() => {this.setState({ notes: notes })}, 1250);
       });
+  }
+
+  selectNote = (note, index) => {
+    this.setState({ selectedNote: note, selectedNoteIndex: index});
   }
 }
 

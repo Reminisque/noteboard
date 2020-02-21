@@ -1,0 +1,8 @@
+.ui-divider {
+    height: 1px;
+    width: 100%;
+    margin: 0;
+    border: none;
+    flex-shrink: 0;
+    background-color: rgba(0, 0, 0, 0.16)
+}

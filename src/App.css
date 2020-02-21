@@ -41,4 +41,5 @@ input {
 .ui-btn {
     background: none;
     padding: 6px 16px;
+    cursor: pointer;
 }

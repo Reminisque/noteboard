@@ -1,7 +1,7 @@
 .note-container {
   position: relative;
   box-sizing: border-box;
-  cursor: pointer;
+  background-color: rgb(255, 245, 210)
 }
 
 .note {
@@ -17,6 +17,7 @@
   flex: 1 1 auto;
   text-align: left;
   max-width: 100%;
+  cursor: pointer;
 }
 
 .note-title-text {

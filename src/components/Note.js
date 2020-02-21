@@ -5,14 +5,15 @@ import './Note.css';
 
 class Note extends React.Component {
   render() {
-    const { title, body } = this.props;
+    const { _note, _index } = this.props;
 
     return (
       <li className="note-container">
-        <div className="note">
+        <div className="note"
+          onClick={() => this.selectNote(_note, _index)}>
           <div className="note-text">
-            <div className="note-title-text">{removeHTMLTags(title)}</div>
-            <div className="note-body-text">{removeHTMLTags(body)}</div>
+            <div className="note-title-text">{removeHTMLTags(_note.title)}</div>
+            <div className="note-body-text">{removeHTMLTags(_note.body).substring(0, 50)}</div>
           </div>
           <div className="note-delete-container">
             <button className="note-delete-btn">
@@ -23,6 +24,8 @@ class Note extends React.Component {
       </li>
     );
   }
+
+  selectNote = (n, i) => this.props.selectNote(n, i);
 }
 
 export default Note;
