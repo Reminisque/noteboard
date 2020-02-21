@@ -3,10 +3,9 @@ import { removeHTMLTags } from '../helpers';
 import { ReactComponent as DeleteIcon } from '../icons/delete.svg';
 import './Note.css';
 
-class ListItem extends React.Component {
+class Note extends React.Component {
   render() {
     const { title, body } = this.props;
-    console.log(removeHTMLTags(title));
 
     return (
       <li className="note-container">
@@ -26,4 +25,4 @@ class ListItem extends React.Component {
   }
 }
 
-export default ListItem;
+export default Note;
