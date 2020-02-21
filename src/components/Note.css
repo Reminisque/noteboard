@@ -1,6 +1,7 @@
 .note-container {
   position: relative;
   box-sizing: border-box;
+  cursor: pointer;
 }
 
 .note {
@@ -52,10 +53,11 @@
   border-radius: 50%;
   background: transparent;
   border: none;
+  cursor: pointer;
 }
 
 .note-delete-btn:hover {
-  background: rgba(0, 0, 0, 0.08)
+  background: rgba(0, 0, 0, 0.16)
 }
 
 .note-delete-icon {

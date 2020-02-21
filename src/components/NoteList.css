@@ -8,6 +8,7 @@
   height: 42px;
   width: 100%;
   text-transform: uppercase;
+  background-color: rgb(243, 209, 147);
 }
 
 .new-note-input {
@@ -21,8 +22,9 @@
   height: 42px;
   width: 100%;
   box-sizing: border-box;
-
   text-transform: uppercase;
+  background-color: rgb(243, 209, 147);
+
 }
 
 .notelist-loading-container {
