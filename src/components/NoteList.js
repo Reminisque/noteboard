@@ -20,7 +20,7 @@ class NoteList extends React.Component {
       return (
         <div className="notelist-container">
           <button
-            className="new-note-btn"
+            className="new-note-btn ui-btn"
             onClick={this.toggleAddingNote}>
             {this.state.addingNote ? "Cancel" : "New Note"}
           </button>
@@ -33,7 +33,7 @@ class NoteList extends React.Component {
                   onChange={(e) => this.updateTitle(e.target.value)}>
                 </input>
                 <button
-                  className="new-note-submit-btn"
+                  className="new-note-submit-btn ui-btn"
                   onClick={this.submitNote}>
                   Submit Note
               </button>

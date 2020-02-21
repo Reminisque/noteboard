@@ -20,6 +20,8 @@
 .new-note-submit-btn {
   height: 42px;
   width: 100%;
+  box-sizing: border-box;
+
   text-transform: uppercase;
 }
 

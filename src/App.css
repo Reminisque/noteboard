@@ -37,3 +37,8 @@ input {
 .ql-editor {
     cursor: text;
 }
+
+.ui-btn {
+    background: none;
+    padding: 6px 16px;
+}
