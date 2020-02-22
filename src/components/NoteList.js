@@ -16,7 +16,7 @@ class NoteList extends React.Component {
   }
 
   render() {
-    const { notes, selectedNoteIndex } = this.props;
+    const { notes } = this.props;
     if (notes) {
       return (
         <div className="notelist-container">
@@ -42,12 +42,12 @@ class NoteList extends React.Component {
           }
           <List>
             {
-              notes.map((_note, _index) => {
+              Object.keys(notes).map((id) => {
                 return (
-                  <div key={_index}>
+                  <div key={id}>
                     <Note
-                      _note={_note}
-                      _index={_index}
+                      _note={notes[id]}
+                      _id={id}
                       selectNote={this.selectNote}>
                     </Note>
                     <Divider></Divider>

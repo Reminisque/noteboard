@@ -9,7 +9,7 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      selectedNoteIndex: null,
+      selectedNoteId: null,
       selectedNote: null,
       notes: null
     }
@@ -19,14 +19,14 @@ class App extends React.Component {
     return (
       <div className="app-container">
         <NoteList
-          selectedNoteIndex={this.state.selectedNoteIndex}
           notes={this.state.notes}
           selectNote={this.selectNote}>
         </NoteList>
         {
           this.state.selectedNote ?
           <Editor
-            selectedNote={this.state.selectedNote}>
+            selectedNote={this.state.selectedNote}
+            selectedNoteId={this.state.selectedNoteId}>
           </Editor> : null
         }
       </div>
@@ -38,18 +38,17 @@ class App extends React.Component {
       .firestore()
       .collection('notes')
       .onSnapshot(serverSnap => {
-        const notes = serverSnap.docs.map(_doc => {
-          const data = _doc.data();
-          data['id'] = _doc.id;
-          return data;
+        let notes = {};
+        serverSnap.docs.forEach((_doc) => {
+          notes[_doc.id] = _doc.data();
         });
 
         setTimeout(() => {this.setState({ notes: notes })}, 1250);
       });
   }
 
-  selectNote = (note, index) => {
-    this.setState({ selectedNote: note, selectedNoteIndex: index});
+  selectNote = (note, id) => {
+    this.setState({ selectedNote: note, selectedNoteId: id });
   }
 }
 

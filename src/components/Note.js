@@ -5,12 +5,12 @@ import './Note.css';
 
 class Note extends React.Component {
   render() {
-    const { _note, _index } = this.props;
+    const { _note, _id} = this.props;
 
     return (
       <li className="note-container">
         <div className="note"
-          onClick={() => this.selectNote(_note, _index)}>
+          onClick={() => this.selectNote(_note, _id)}>
           <div className="note-text">
             <div className="note-title-text">{removeHTMLTags(_note.title)}</div>
             <div className="note-body-text">{removeHTMLTags(_note.body).substring(0, 50)}</div>

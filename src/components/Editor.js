@@ -44,9 +44,9 @@ class Editor extends React.Component {
   }
 
   componentDidUpdate() {
-    if (this.state.id != this.props.selectedNote.id) {
+    if (this.state.id != this.props.selectedNoteId) {
       this.setState({ 
-        id: this.props.selectedNote.id,
+        id: this.props.selectedNoteId,
         title: this.props.selectedNote.title,
         body: this.props.selectedNote.body
       });
