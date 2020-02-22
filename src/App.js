@@ -21,6 +21,7 @@ class App extends React.Component {
         <NoteList
           notes={this.state.notes}
           submitNote={this.submitNote}
+          deleteNote={this.deleteNote}
           selectNote={this.selectNote}>
         </NoteList>
         {
@@ -44,7 +45,12 @@ class App extends React.Component {
         serverSnap.docs.forEach((_doc) => {
           notes[_doc.id] = _doc.data();
         });
-        setTimeout(() => {this.setState({ notes: notes })}, 1250);
+        setTimeout(() => {
+          this.setState({ notes: notes })
+          if (notes && !this.state.notes[this.state.selectedNoteId]) {
+            this.setState({ selectedNote: null, selectedNoteId: null});
+          }  
+        }, 1250);
       });
   }
 
@@ -81,6 +87,23 @@ class App extends React.Component {
         body: note.body,
         timestamp: firebase.firestore.FieldValue.serverTimestamp()
       });
+  }
+
+  deleteNote = async (id) => {
+    if (id === this.state.selectedNoteId) {
+      await this.setState({ selectedNote: null, selectedNoteId: null });
+    }
+    
+    await this.setState((state, props) => {
+      delete state.notes[id];
+      return { notes: state.notes };
+    });
+
+    firebase
+      .firestore()
+      .collection('notes')
+      .doc(id)
+      .delete()
   }
 
   selectNote = (note, id) => {

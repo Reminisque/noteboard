@@ -48,6 +48,7 @@ class NoteList extends React.Component {
                     <Note
                       _note={notes[id]}
                       _id={id}
+                      deleteNote={this.deleteNote}
                       selectNote={this.selectNote}>
                     </Note>
                     <Divider></Divider>
@@ -77,13 +78,15 @@ class NoteList extends React.Component {
   };
 
   toggleAddingNote = () => {
-    this.setState({ title: null, addingNote: !this.state.addingNote });
+    this.setState({ title: '', addingNote: !this.state.addingNote });
   }
 
   submitNote = (t) => {
-    this.props.submitNote(t);
+    t === '' ? this.props.submitNote('Untitled') : this.props.submitNote(t);
     this.toggleAddingNote();
   }
+  
+  deleteNote = (id) => this.props.deleteNote(id);
 
   selectNote = (n, i) => this.props.selectNote(n, i);
 }
