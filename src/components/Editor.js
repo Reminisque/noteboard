@@ -37,14 +37,14 @@ class Editor extends React.Component {
 
   componentDidMount() {
     this.setState({ 
-      id: this.props.selectedNote.id,
+      id: this.props.selectedNoteId,
       title: this.props.selectedNote.title,
       body: this.props.selectedNote.body
     });
   }
 
   componentDidUpdate() {
-    if (this.state.id != this.props.selectedNoteId) {
+    if (this.state.id !== this.props.selectedNoteId) {
       this.setState({ 
         id: this.props.selectedNoteId,
         title: this.props.selectedNote.title,
@@ -64,7 +64,11 @@ class Editor extends React.Component {
   };
 
   update = debounce(() => {
-    console.log("Updating database: \n", this.state);
+    this.props.updateNote(this.state.id, {
+        title: this.state.title,
+        body: this.state.body
+    });
+    console.log(`Updated note ${this.state.title} (ID:${this.state.id})`);
   }, 1500);
 }
 

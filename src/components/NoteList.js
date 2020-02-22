@@ -35,7 +35,7 @@ class NoteList extends React.Component {
                 </input>
                 <button
                   className="new-note-submit-btn ui-btn"
-                  onClick={this.submitNote}>
+                  onClick={() => this.submitNote(this.state.title)}>
                   Submit Note
               </button>
               </div> : null
@@ -80,8 +80,9 @@ class NoteList extends React.Component {
     this.setState({ title: null, addingNote: !this.state.addingNote });
   }
 
-  submitNote = () => {
-    console.log("Submitted note: ", this.state.title);
+  submitNote = (t) => {
+    this.props.submitNote(t);
+    this.toggleAddingNote();
   }
 
   selectNote = (n, i) => this.props.selectNote(n, i);
