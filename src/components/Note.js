@@ -13,7 +13,7 @@ class Note extends React.Component {
           onClick={() => this.selectNote(_note, _id)}>
           <div className="note-text">
             <div className="note-title-text">{removeHTMLTags(_note.title)}</div>
-            <div className="note-body-text">{removeHTMLTags(_note.body).substring(0, 50)}</div>
+            <div className="note-body-text">{removeHTMLTags(_note.body).substring(0, 64)}</div>
           </div>
           <div className="note-delete-container">
             <button className="note-delete-btn"
