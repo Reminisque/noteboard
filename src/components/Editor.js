@@ -68,7 +68,6 @@ class Editor extends React.Component {
         title: this.state.title,
         body: this.state.body
     });
-    console.log(`Updated note ${this.state.title} (ID:${this.state.id})`);
   }, 1500);
 }
 

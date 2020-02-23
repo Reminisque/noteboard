@@ -42,15 +42,15 @@ class App extends React.Component {
       .collection('notes')
       .onSnapshot(serverSnap => {
         let notes = {};
+
         serverSnap.docs.forEach((_doc) => {
           notes[_doc.id] = _doc.data();
         });
-        setTimeout(() => {
-          this.setState({ notes: notes })
-          if (notes && !this.state.notes[this.state.selectedNoteId]) {
-            this.setState({ selectedNote: null, selectedNoteId: null});
-          }  
-        }, 1250);
+
+        this.setState({ notes: notes });
+        if (notes && !this.state.notes[this.state.selectedNoteId]) {
+          this.setState({ selectedNote: null, selectedNoteId: null});
+        }
       });
   }
 
