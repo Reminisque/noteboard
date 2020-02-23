@@ -1,6 +1,8 @@
 # Noteboard
 
-Noteboard is a note-taking application built around the React front-end framework and Firebase. Within Firebase's infrastructure, this application uses Firestore as the database to store all notes.
+Noteboard is a note-taking web application built around the React front-end framework, Firebase's Firestore database, and react-quill editor.
+
+![Noteboard Demo](noteboard-demo.gif "Noteboard demo")
 
 ## Before running the application
 
